@@ -1,0 +1,60 @@
+<div class="todo-container" *ngIf="todos$ | async as todos;">
+    <h1>My Todo List app</h1>
+    <mat-divider></mat-divider>
+
+    <div>
+      <mat-form-field class="example-form-field" style="width: 90%;">
+        <mat-label>Clearable input</mat-label>
+        <input matInput type="text" [(ngModel)]="decription">
+          <button *ngIf="decription" matSuffix mat-icon-button aria-label="Clear" (click)="decription=''">
+            <mat-icon>close</mat-icon>
+          </button>
+      </mat-form-field>
+      <button [disabled]="!decription" mat-flat-button extended (click)="addTodo(todos.length + 1)">
+        <mat-icon>add</mat-icon>
+        Add a task
+      </button>
+    </div>
+    <ul *ngIf="todos.length; else empty">
+
+      <li *ngFor="let todo of todos$ | async; let i = index;">
+        <app-todo-item [todo]="todo"></app-todo-item>
+      </li>
+      <!-- {{todo.id}}  {{ todo.description }} - {{ todo.completed ? 'Done' : 'Pending' }} -->
+      <!-- <mat-form-field  *ngIf="editingMode">
+        <mat-label>New description</mat-label>
+        <input matInput type="text" [(ngModel)]="descriptionUpdate">
+      </mat-form-field>
+
+      <button mat-icon-button [disabled]="todo.completed" (click)="complete(todo)">
+        <mat-icon>check</mat-icon>
+      </button>
+
+      <button mat-flat-button *ngIf="!editingMode" (click)="toggleEditingMode()">
+        Edit
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-flat-button *ngIf="editingMode" (click)="update(todo, descriptionUpdate)">
+        Update
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-flat-button style="background-color: darkred" (click)="delete(todo.id)">
+        Delete
+        <mat-icon>close</mat-icon>
+      </button>
+      </li>-->
+  
+    </ul> 
+  
+    <ng-template #empty>
+      <div>No Data</div>
+    </ng-template>
+  
+  
+  <button (click)="loadTodos()">Refresh</button>
+  
+  <div *ngIf="isLoading$ | async">Loading...</div>
+  
+</div>
