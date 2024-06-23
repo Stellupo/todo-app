@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Todo } from '../../store/todo.model';
 import { Store } from '@ngrx/store';
 import * as TodoActions from '../../store/actions';
@@ -6,8 +6,9 @@ import { AppState } from '../../store/store';
 
 @Component({
   selector: 'app-todo-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './todo-item.component.html',
-  styleUrl: './todo-item.component.css'
+  styleUrl: './todo-item.component.css',
 })
 export class TodoItemComponent {
   @Input() todo!: Todo;
