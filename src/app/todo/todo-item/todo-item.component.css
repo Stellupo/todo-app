@@ -1,1 +1,44 @@
+.todo-item-container {
+    display: flex;
+    gap: 2em;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.button-container {
+    button {
+        margin-right: 2em;
+    }
+    .warning {
+        background-color: darkred
+    }
+}
+
+span {
+    font-size: inherit !important
+}
+
+.todo-text {
+    display: flex;
+    align-items: center;
+    max-width: 60%;
+    p {
+        margin: 0;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 80%;
+        display: inline-block;
+    }
+}
+/*Styles for mobile or tablet */
+
+@media all and (max-width: 1024px) {
+    .todo-item-container {
+        flex-direction: column;
+    }
+    .todo-text {
+        max-width: 100%;
+        width: 100%;
+    }
+}

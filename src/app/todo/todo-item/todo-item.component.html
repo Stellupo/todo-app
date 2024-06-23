@@ -1,41 +1,56 @@
-<div>
-    <mat-checkbox
-    class="example-margin"
-    [checked]="todo.completed"
-    (change)="complete($event.checked, todo)"
-    >
-    </mat-checkbox>
+<div class="todo-item-container">
+    <div class="todo-text">
+        <mat-checkbox
+        class="example-margin"
+        [checked]="todo.completed"
+        (change)="complete($event.checked, todo)"
+        >
+        </mat-checkbox>
 
-    <span *ngIf="!editingMode">{{ todo.description }}</span>
+        <p *ngIf="!editingMode">{{ todo.description }}</p>
 
-    <div *ngIf="editingMode">
+        <div *ngIf="editingMode">
         <mat-form-field>
             <mat-label>New description</mat-label>
             <input matInput type="text" [(ngModel)]="descriptionUpdate">
-            </mat-form-field>
-        
-            <button mat-icon-button (click)="update(todo, descriptionUpdate)">
+        </mat-form-field>
+
+        <button mat-icon-button (click)="update(todo, descriptionUpdate)">
             <mat-icon>check</mat-icon>
-            </button>
-        
-            <button mat-icon-button (click)="toggleEditingMode(false)">
-                <mat-icon>close</mat-icon>
-            </button>
+        </button>
+
+        <button mat-icon-button (click)="toggleEditingMode(false)">
+            <mat-icon>close</mat-icon>
+        </button>
+        </div>
     </div>
-    
 
-    <button mat-flat-button *ngIf="!editingMode" (click)="toggleEditingMode(true)">
-    Edit
-    <mat-icon>edit</mat-icon>
+    <div class="button-container">
+    <button
+        mat-flat-button
+        *ngIf="!editingMode"
+        (click)="toggleEditingMode(true)"
+    >
+        Edit
+        <mat-icon>edit</mat-icon>
     </button>
 
-    <button mat-flat-button *ngIf="editingMode" (click)="update(todo, descriptionUpdate)">
-    Update
-    <mat-icon>edit</mat-icon>
+    <button
+        mat-flat-button
+        *ngIf="editingMode"
+        (click)="update(todo, descriptionUpdate)"
+    >
+        Update
+        <mat-icon>edit</mat-icon>
     </button>
 
-    <button mat-flat-button style="background-color: darkred" (click)="delete(todo.id)">
-    Delete
-    <mat-icon>close</mat-icon>
+    <button
+        mat-flat-button
+        class="warning"
+        (click)="delete(todo.id)"
+    >
+        Delete
+        <mat-icon>close</mat-icon>
     </button>
+    </div>
 </div>

@@ -1,4 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+/* Custom Fonts */
+@font-face {
+  font-family: "amatic";
+  src: url("assets/web-fonts/amaticsc-regular-webfont.eot");
+  src: url("assets/web-fonts/amaticsc-regular-webfont.eot")
+      format("embedded-opentype"),
+    url("assets/web-fonts/amaticsc-regular-webfont.woff") format("woff"),
+    url("assets/web-fonts/amaticsc-regular-webfont.ttf") format("truetype"),
+    url("assets/web-fonts/amaticsc-regular-webfont.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Overall Page */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background: #dbebfa;
+    color: #0b01ff;
+    font-family: "Helvetica Neue", Arial, sans-serif !important;
+    font-size: 25px;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: auto;
+}
+
+
+/*Styles for mobile or tablet */
+
+@media all and (max-width: 1024px) {
+  html,
+  body {
+    font-size: 18px;
+  }
+}
