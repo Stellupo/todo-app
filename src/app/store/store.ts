@@ -1,9 +1,8 @@
 import { Action, ActionReducer } from "@ngrx/store";
 import { todoReducer, TodoState } from "./reducers";
 
-
 export interface AppState {
-  todo: TodoState
+  todo: TodoState;
 }
 
 export interface AppStore {
@@ -11,5 +10,5 @@ export interface AppStore {
 }
 
 export const appStore: AppStore = {
-  todo: todoReducer
-}
+  todo: todoReducer,
+};

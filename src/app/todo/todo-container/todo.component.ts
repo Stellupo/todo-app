@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
-import { Observable } from "rxjs";
 import { Todo } from "../../store/todo.model";
 import { Store } from "@ngrx/store";
 import { AppState } from "../../store/store";
 import * as TodoActions from "../../store/actions";
 import { todoSelector } from "../../store/selectors";
 import { ToDoService } from "../../store/todo-service";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-todo",

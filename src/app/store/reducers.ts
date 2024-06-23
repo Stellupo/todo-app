@@ -6,12 +6,10 @@ export const todoFeatureKey = "todo";
 export interface TodoState {
   todos: Todo[];
   loading: boolean;
-  error: string;
 }
 export const initialState: TodoState = {
   todos: [],
   loading: false,
-  error: "",
 };
 
 export const todoReducer = createReducer(
@@ -21,12 +19,6 @@ export const todoReducer = createReducer(
     ...state,
     todos: todos,
     loading: true,
-  })),
-
-  on(TodoActions.loadTodosFailure, (state, { error }) => ({
-    ...state,
-    error,
-    loading: false,
   })),
 
   on(TodoActions.addTodo, (state, { todo }) => ({

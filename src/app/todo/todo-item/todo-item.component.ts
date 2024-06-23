@@ -32,7 +32,6 @@ export class TodoItemComponent {
   }
 
   update(todo: Todo, newDescription: string) {
-    // const newTodo: Todo = {id: todo.id, description: newDescription, completed: todo.completed };
     this.store.dispatch(TodoActions.updateTodo({todo : {...todo, description: newDescription}}));
     this.toggleEditingMode(false);
   }

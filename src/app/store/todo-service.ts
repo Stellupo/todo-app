@@ -4,6 +4,7 @@ import { AppState } from "./store";
 import { select, Store } from "@ngrx/store";
 import { loadTodosSuccess } from "./actions";
 import { todoSelector } from "./selectors";
+import { Todo } from "./todo.model";
 
 @Injectable()
 export class ToDoService {
@@ -15,7 +16,7 @@ export class ToDoService {
     localStorage.setItem(localStorageKey, state);
   }
 
-  getSavedState(localStorageKey: any): any {
+  getSavedState(localStorageKey: string): Todo[] {
     return JSON.parse(localStorage.getItem(localStorageKey) as string);
   }
 
@@ -35,7 +36,7 @@ export class ToDoService {
       return;
     } 
     
-    // after load/refresh…
+    // after loading/refreshing window
     this.isInit = true;
     this.loadTodoFromLocalStorage();
 
