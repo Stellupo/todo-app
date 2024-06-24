@@ -6,6 +6,11 @@ Use of async pipe, module-based app, NgRx store, small components, OnPush Change
 
 # Init the project
 
+If project does not run locally after cloning from git, please check the following :
+-Use Node.js to install the dependencies (I used the 20.15.0, official installation process [here](https://nodejs.org/en/download/package-manager)) by running `npm install`.
+-Download TypeScript (I have the latest version, 5.4.2) if it has not been installed.
+-Angular, Angular material and [NgRx Store](https://ngrx.io/guide/store/install) version 18.0.4 have been used. Check they have been well installed.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.4.
 
 ## Development server
