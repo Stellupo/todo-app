@@ -34,12 +34,13 @@ export class ToDoService {
   initStore() {
     if (this.isInit) {
       return;
-    } 
-    
+    }
+
     // after loading/refreshing window
     this.isInit = true;
     this.loadTodoFromLocalStorage();
 
+    // save the Store state only if this one is not empty and loaded
     this.store
       .pipe(
         select(todoSelector),

@@ -1,4 +1,10 @@
-# TodoApp
+# Presentation
+
+Dynamic/reactive to-do list application using Angular and TypeScript. This application allow users to add, edit, delete, and mark tasks as completed/uncompleted.The application keep tasks in local storage.
+
+Use of async pipe, module-based app, NgRx store, small components, OnPush ChangeDetectorStrategy, avoidance of direct changes to Objects have been chosen to improve performances of the app.
+
+# Init the project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.4.
 
